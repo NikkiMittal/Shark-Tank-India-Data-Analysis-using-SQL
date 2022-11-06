@@ -13,7 +13,7 @@ FROM sharktankindia.1
 WHERE Investment_Amount_inlakhs IN 
 								(SELECT MAX(Investment_Amount_inlakhs) FROM sharktankindia.1);
                                 
--- 4. Top 10 Brands and ideas in which there was no investment:
+-- 4. Brands and ideas in which there was no investment:
 SELECT Brand, Idea
 FROM sharktankindia.1
 WHERE Investment_Amount_inlakhs = 0
@@ -46,7 +46,7 @@ INNER JOIN sharktankindia.2
 ON sharktankindia.1.Pitch_Number = sharktankindia.2.Pitch_Number
 WHERE Anupam = 'N' AND Ashneer = 'N' AND Namita = 'N' AND Aman = 'N' AND Peyush = 'N' AND Vineeta = 'N' AND Ghazal = 'N';
 
--- 10. Decreasing order of brands in which Vineeta invested:
+-- 10. Brands in which Vineeta invested:
 SELECT sharktankindia.1.Brand, sharktankindia.1.Investment_Amount_inlakhs
 FROM sharktankindia.1
 INNER JOIN sharktankindia.2
