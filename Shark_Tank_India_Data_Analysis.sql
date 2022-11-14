@@ -86,7 +86,7 @@ SELECT Pitch_Number, Idea
 FROM sharktankindia.1
 WHERE Idea LIKE "%App";
 
--- 18. Total investment percentage by Ghazal:
+-- 18. Total investment contribution of each Shark Tank:
 SELECT 
  ROUND(CONCAT((SELECT SUM(sharktankindia.1.Investment_Amount_inlakhs) FROM sharktankindia.1 INNER JOIN sharktankindia.2 ON sharktankindia.1.Pitch_Number = sharktankindia.2.Pitch_Number WHERE sharktankindia.2.Ghazal = 'Y')*100/SUM(sharktankindia.1.Investment_Amount_inlakhs), "%"), 0) AS Investment_Percentage_by_Ghazal, 
  ROUND(CONCAT((SELECT SUM(sharktankindia.1.Investment_Amount_inlakhs) FROM sharktankindia.1 INNER JOIN sharktankindia.2 ON sharktankindia.1.Pitch_Number = sharktankindia.2.Pitch_Number WHERE sharktankindia.2.Anupam = 'Y')*100/SUM(sharktankindia.1.Investment_Amount_inlakhs), "%"), 0) AS Investment_Percentage_by_Anupam,
