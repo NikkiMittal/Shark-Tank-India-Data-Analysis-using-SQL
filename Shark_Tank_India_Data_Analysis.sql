@@ -98,6 +98,6 @@ SELECT
 FROM sharktankindia.1;
 
 -- 19. Count of pitches in which there was no investment:
-SELECT COUNT(sharktankindia.1.Pitch_Number) AS Count_of_Pitches_with_no_investments
+SELECT COUNT(sharktankindia.1.Pitch_Number) AS Count_of_Pitches_with_no_investment
 FROM sharktankindia.1 
 WHERE Investment_Amount_inlakhs = 0;
