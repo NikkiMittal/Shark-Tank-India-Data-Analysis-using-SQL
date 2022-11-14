@@ -97,3 +97,7 @@ SELECT
  ROUND(CONCAT((SELECT SUM(sharktankindia.1.Investment_Amount_inlakhs) FROM sharktankindia.1 INNER JOIN sharktankindia.2 ON sharktankindia.1.Pitch_Number = sharktankindia.2.Pitch_Number WHERE sharktankindia.2.Vineeta = 'Y')*100/SUM(sharktankindia.1.Investment_Amount_inlakhs), "%"), 0) AS Investment_Percentage_by_Vineeta
 FROM sharktankindia.1;
 
+-- 19. Count of pitches in which there was no investment:
+SELECT COUNT(sharktankindia.1.Pitch_Number) AS Count_of_Pitches_with_no_investments
+FROM sharktankindia.1 
+WHERE Investment_Amount_inlakhs = 0;
