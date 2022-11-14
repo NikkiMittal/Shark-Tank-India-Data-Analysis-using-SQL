@@ -88,5 +88,12 @@ WHERE Idea LIKE "%App";
 
 -- 18. Total investment percentage by Ghazal:
 SELECT 
- ROUND(CONCAT((SELECT SUM(sharktankindia.1.Investment_Amount_inlakhs) FROM sharktankindia.1 INNER JOIN sharktankindia.2 ON sharktankindia.1.Pitch_Number = sharktankindia.2.Pitch_Number WHERE sharktankindia.2.Ghazal = 'Y')*100/SUM(sharktankindia.1.Investment_Amount_inlakhs), "%"), 0) AS Investment_Percentage_by_Ghazal
+ ROUND(CONCAT((SELECT SUM(sharktankindia.1.Investment_Amount_inlakhs) FROM sharktankindia.1 INNER JOIN sharktankindia.2 ON sharktankindia.1.Pitch_Number = sharktankindia.2.Pitch_Number WHERE sharktankindia.2.Ghazal = 'Y')*100/SUM(sharktankindia.1.Investment_Amount_inlakhs), "%"), 0) AS Investment_Percentage_by_Ghazal, 
+ ROUND(CONCAT((SELECT SUM(sharktankindia.1.Investment_Amount_inlakhs) FROM sharktankindia.1 INNER JOIN sharktankindia.2 ON sharktankindia.1.Pitch_Number = sharktankindia.2.Pitch_Number WHERE sharktankindia.2.Anupam = 'Y')*100/SUM(sharktankindia.1.Investment_Amount_inlakhs), "%"), 0) AS Investment_Percentage_by_Anupam,
+ ROUND(CONCAT((SELECT SUM(sharktankindia.1.Investment_Amount_inlakhs) FROM sharktankindia.1 INNER JOIN sharktankindia.2 ON sharktankindia.1.Pitch_Number = sharktankindia.2.Pitch_Number WHERE sharktankindia.2.Ashneer = 'Y')*100/SUM(sharktankindia.1.Investment_Amount_inlakhs), "%"), 0) AS Investment_Percentage_by_Ashneer,
+ ROUND(CONCAT((SELECT SUM(sharktankindia.1.Investment_Amount_inlakhs) FROM sharktankindia.1 INNER JOIN sharktankindia.2 ON sharktankindia.1.Pitch_Number = sharktankindia.2.Pitch_Number WHERE sharktankindia.2.Namita = 'Y')*100/SUM(sharktankindia.1.Investment_Amount_inlakhs), "%"), 0) AS Investment_Percentage_by_Namita,
+ ROUND(CONCAT((SELECT SUM(sharktankindia.1.Investment_Amount_inlakhs) FROM sharktankindia.1 INNER JOIN sharktankindia.2 ON sharktankindia.1.Pitch_Number = sharktankindia.2.Pitch_Number WHERE sharktankindia.2.Aman = 'Y')*100/SUM(sharktankindia.1.Investment_Amount_inlakhs), "%"), 0) AS Investment_Percentage_by_Aman,
+ ROUND(CONCAT((SELECT SUM(sharktankindia.1.Investment_Amount_inlakhs) FROM sharktankindia.1 INNER JOIN sharktankindia.2 ON sharktankindia.1.Pitch_Number = sharktankindia.2.Pitch_Number WHERE sharktankindia.2.Peyush = 'Y')*100/SUM(sharktankindia.1.Investment_Amount_inlakhs), "%"), 0) AS Investment_Percentage_by_Peyush,
+ ROUND(CONCAT((SELECT SUM(sharktankindia.1.Investment_Amount_inlakhs) FROM sharktankindia.1 INNER JOIN sharktankindia.2 ON sharktankindia.1.Pitch_Number = sharktankindia.2.Pitch_Number WHERE sharktankindia.2.Vineeta = 'Y')*100/SUM(sharktankindia.1.Investment_Amount_inlakhs), "%"), 0) AS Investment_Percentage_by_Vineeta
 FROM sharktankindia.1;
+
